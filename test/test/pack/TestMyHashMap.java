@@ -60,7 +60,11 @@ public class TestMyHashMap {
     public void testManyVal() {
         MyHashMap hm = new MyHashMap();
         for(int i = 0; i<200; i++){
-            hm.put( "entry_"+i, Randoms.getRandChar( 2, 8 ) );
+            String randStr = "";
+            for( int j = 0; j<4; j++ ){
+                randStr += Randoms.getRandChar( 48, 122 );
+            }
+            hm.put( "entry_"+i, randStr );
         }
         hm.remove( "entry_2" );
         hm.remove( "entry_50" );
